@@ -8,10 +8,10 @@ mongoose.connect(process.env.MONGO_URL)
 const app = express()
 app.use(express.json())
 app.use(cors())
-app.post("/todo/add", addTodo)
-app.get("/todo", getTodos)
-app.put("/todo/:id", updateTodos)
-app.delete("/todo/:id", deleteTodos)
+app.post("/api/todo/add", addTodo)
+app.get("/api/todo", getTodos)
+app.put("/api/todo/:id", updateTodos)
+app.delete("/api/todo/:id", deleteTodos)
 
 mongoose.connection.once("open", () => {
     console.log("BD Connected");
